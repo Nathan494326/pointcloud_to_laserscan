@@ -22,6 +22,15 @@ ament_auto_add_executable(dummy_pointcloud_publisher
   src/dummy_pointcloud_publisher.cpp
 )
 
+ament_auto_add_executable(point_cloud_publisher
+  src/publish_filter.cpp
+)
+
+ament_target_dependencies(point_cloud_publisher
+  rclcpp
+  sensor_msgs
+)
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   ament_lint_auto_find_test_dependencies()
